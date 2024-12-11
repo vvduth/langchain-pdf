@@ -18,7 +18,7 @@ def create_embeddings_for_pdf(pdf_id: str, pdf_path: str):
     for doc in docs:
         doc.metadata = {
             "page": doc.metadata["page"],
-            "text": doc.metadata["text"],
+            "text": doc.page_content,
             "pdf_id": pdf_id
         }
     
