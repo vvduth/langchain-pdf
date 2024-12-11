@@ -39,6 +39,7 @@
 		"axios": "^0.27.2",
 		"chart.js": "^4.4.0",
 		"classnames": "^2.3.2",
+		"client": "file:",
 		"immer": "^9.0.12",
 		"marked": "^4.3.0",
 		"material-icons": "^1.13.11",
