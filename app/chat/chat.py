@@ -6,7 +6,7 @@ from app.chat.vector_stores import retriever_map
 from app.chat.llms import llm_map
 from app.chat.memories import memory_map
 from app.web.api import (set_conversation_components, get_conversation_components)
-
+from app.chat.score import random_component_by_score
 def select_component(
     component_type, component_map,chat_args
 ):
@@ -20,6 +20,7 @@ def select_component(
         return previous_component, build_component(chat_args)
     else:
         # random time
+        # random_component_by_score(component_type, component_map)
         random_component_name = random.choice(list(component_map.keys()))
         build_component = component_map[random_component_name]
         return random_component_name, build_component(chat_args)
@@ -44,6 +45,7 @@ def build_chat(chat_args: ChatArgs):
         memory_map, 
         chat_args
     )
+    
     
     set_conversation_components(
         chat_args.conversation_id,
