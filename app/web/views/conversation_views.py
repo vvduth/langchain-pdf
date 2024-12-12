@@ -46,6 +46,8 @@ def create_message(conversation):
 
     if not chat:
         return "Chat not yet implemented!"
+    
+    
 
     if streaming:
         return Response(
